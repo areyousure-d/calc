@@ -1,1 +1,5 @@
-export { dndConstructorActions, dndConstructorReducer } from "./model";
+export {
+  dndConstructorActions,
+  dndConstructorReducer,
+  dndConstructorSelectors,
+} from "./model";
