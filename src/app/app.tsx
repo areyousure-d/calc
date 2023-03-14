@@ -1,5 +1,11 @@
+import { CalculatorConstructor } from "@/features/calculator-constructor";
+
 import { ReduxProvider } from "./providers";
 
 export const App = () => {
-  return <ReduxProvider>app</ReduxProvider>;
+  return (
+    <ReduxProvider>
+      <CalculatorConstructor />
+    </ReduxProvider>
+  );
 };
