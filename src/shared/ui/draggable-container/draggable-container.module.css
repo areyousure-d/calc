@@ -1,0 +1,3 @@
+.disable-siblings-animation ~ div {
+  transform: none !important;
+}

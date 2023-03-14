@@ -1,3 +1,5 @@
+import styles from "../pointer-events-disabled.module.css";
+
 export const Display = () => {
-  return <div>display</div>;
+  return <div className={styles["pointer-events-disabled"]}>display</div>;
 };

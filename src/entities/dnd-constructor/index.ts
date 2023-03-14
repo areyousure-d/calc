@@ -1,3 +1,4 @@
+export type { Block, BlockId } from "./model";
 export {
   dndConstructorActions,
   dndConstructorReducer,

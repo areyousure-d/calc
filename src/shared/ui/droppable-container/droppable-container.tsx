@@ -4,16 +4,18 @@ import { Droppable } from "react-beautiful-dnd";
 type Props = {
   droppableId: string;
   children: ReactNode;
+  isDropDisabled: boolean;
   className?: string;
 };
 
 export const DroppableContainer = ({
   droppableId,
   children,
+  isDropDisabled,
   className,
 }: Props) => {
   return (
-    <Droppable droppableId={droppableId}>
+    <Droppable droppableId={droppableId} isDropDisabled={isDropDisabled}>
       {(provided) => {
         return (
           <>

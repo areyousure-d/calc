@@ -13,7 +13,13 @@ export const moveBlockToCanvas = (
     block.moved = true;
   }
 
-  state.blocksInCanvas.splice(index, 0, blockId);
+  if (index === 0) {
+    state.blocksInCanvas.splice(1, 0, blockId);
+  } else if (blockId === "display") {
+    state.blocksInCanvas.splice(0, 0, blockId);
+  } else {
+    state.blocksInCanvas.splice(index, 0, blockId);
+  }
 };
 
 export const deleteBlockFromCanvas = (
@@ -41,5 +47,11 @@ export const moveBlockInCanvas = (
   const { fromIndex, toIndex } = action.payload;
   const blockId = state.blocksInCanvas.splice(fromIndex, 1)[0];
 
-  state.blocksInCanvas.splice(toIndex, 0, blockId);
+  if (blockId === "display") {
+    state.blocksInCanvas.splice(0, 0, blockId);
+  } else if (toIndex === 0 && state.blocksInCanvas[toIndex] === "display") {
+    state.blocksInCanvas.splice(1, 0, blockId);
+  } else {
+    state.blocksInCanvas.splice(toIndex, 0, blockId);
+  }
 };

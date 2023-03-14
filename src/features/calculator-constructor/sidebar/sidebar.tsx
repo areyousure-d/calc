@@ -12,12 +12,14 @@ export const Sidebar = () => {
 
   return (
     <div className={styles.container}>
-      <DroppableContainer droppableId="sidebar">
+      <DroppableContainer droppableId="sidebar" isDropDisabled={true}>
         {blocks.map((block, index) => (
           <DraggableContainer
             key={block.id}
             draggableId={block.id}
             index={index}
+            isDragDisabled={block.moved}
+            inSidebar={true}
           >
             {blocksMap[block.id]}
           </DraggableContainer>
