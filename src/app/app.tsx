@@ -1,3 +1,5 @@
+import { ReduxProvider } from "./providers";
+
 export const App = () => {
-  return <div>app</div>;
+  return <ReduxProvider>app</ReduxProvider>;
 };
