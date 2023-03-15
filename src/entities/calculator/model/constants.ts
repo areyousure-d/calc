@@ -1,0 +1,3 @@
+export const MAX_LENGTH_WITH_LG_FONT_SIZE = 9;
+export const MAX_NUM_LENGTH = 16;
+export const PRECISION_FACTOR = 1000000000000000;

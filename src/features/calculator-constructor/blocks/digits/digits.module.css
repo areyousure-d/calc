@@ -2,7 +2,14 @@
   height: 224px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-sm);
+  gap: var(--space-md);
+}
+
+.button {
+  min-width: 72px;
+  height: 48px;
+  font-size: 14px;
+  font-weight: 500;;
 }
 
 .wide {

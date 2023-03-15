@@ -19,6 +19,7 @@
   font-size: 14px;
   line-height: 15px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .disabled {

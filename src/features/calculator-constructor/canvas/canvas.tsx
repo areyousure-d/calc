@@ -33,6 +33,7 @@ export const Canvas = () => {
             draggableId={"canvas" + blockId}
             index={index}
             isDragDisabled={isRuntime || blockId === "display"}
+            isRuntime={isRuntime}
           >
             {blocksMap[blockId]}
           </DraggableContainer>

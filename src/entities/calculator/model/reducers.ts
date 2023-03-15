@@ -1,5 +1,6 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 
+import { MAX_NUM_LENGTH } from "./constants";
 import { CalculatorState, Comma, Digit, Operation } from "./types";
 
 const calculateResult = (
@@ -28,6 +29,12 @@ export const clickDigit = (
   action: PayloadAction<Digit | Comma>
 ) => {
   const symbol = action.payload;
+
+  const isMaxLength = state.numberOnDisplay.length >= MAX_NUM_LENGTH;
+
+  if (isMaxLength) {
+    return;
+  }
 
   if (symbol === ",") {
     if (!state.numberOnDisplay.includes(".")) {

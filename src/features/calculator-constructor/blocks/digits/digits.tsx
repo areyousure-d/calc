@@ -39,7 +39,10 @@ export const Digits = () => {
       {buttons.map((buttonSymbol) => (
         <Button
           key={buttonSymbol}
-          className={buttonSymbol === "0" ? styles.wide : ""}
+          className={clsx({
+            [styles.button]: true,
+            [styles.wide]: buttonSymbol === "0",
+          })}
           onClick={createOnClick(buttonSymbol)}
         >
           {buttonSymbol}

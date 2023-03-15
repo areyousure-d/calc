@@ -3,4 +3,5 @@ export {
   calculatorActions,
   calculatorReducer,
   calculatorSelectors,
+  MAX_LENGTH_WITH_LG_FONT_SIZE,
 } from "./model";

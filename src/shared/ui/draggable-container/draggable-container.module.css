@@ -15,9 +15,8 @@
 
 .disabled-opacity {
   opacity: var(--disabled-opacity);
-  cursor: not-allowed;
 }
 
-.dragging-disabled {
-  cursor: not-allowed;
+.runtime.container {
+  box-shadow: none;
 }

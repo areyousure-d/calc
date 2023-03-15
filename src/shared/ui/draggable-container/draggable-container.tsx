@@ -10,6 +10,7 @@ type Props = {
   isDragDisabled: boolean;
   index: number;
   inSidebar?: boolean;
+  isRuntime?: boolean;
 };
 
 export const DraggableContainer = ({
@@ -18,6 +19,7 @@ export const DraggableContainer = ({
   isDragDisabled,
   index,
   inSidebar = false,
+  isRuntime = false,
 }: Props) => {
   const shouldSetOpacity = inSidebar ? isDragDisabled : false;
 
@@ -37,7 +39,7 @@ export const DraggableContainer = ({
               [styles.container]: true,
               [styles.dragging]: snapshot.isDragging,
               [styles["disabled-opacity"]]: shouldSetOpacity,
-              [styles["dragging-disabled"]]: isDragDisabled,
+              [styles.runtime]: isRuntime,
             })}
           >
             {children}
