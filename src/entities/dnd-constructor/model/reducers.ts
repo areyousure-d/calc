@@ -55,3 +55,7 @@ export const moveBlockInCanvas = (
     state.blocksInCanvas.splice(toIndex, 0, blockId);
   }
 };
+
+export const toggleRuntime = (state: DndConstructorState) => {
+  state.isRuntime = !state.isRuntime;
+};

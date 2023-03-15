@@ -4,10 +4,12 @@ import {
   deleteBlockFromCanvas,
   moveBlockInCanvas,
   moveBlockToCanvas,
+  toggleRuntime,
 } from "./reducers";
 import { DndConstructorState } from "./types";
 
 const initialState: DndConstructorState = {
+  isRuntime: false,
   blocks: [
     { id: "display", moved: false },
     { id: "operations", moved: false },
@@ -24,6 +26,7 @@ const dndConstructorSlice = createSlice({
     moveBlockToCanvas,
     moveBlockInCanvas,
     deleteBlockFromCanvas,
+    toggleRuntime,
   },
 });
 

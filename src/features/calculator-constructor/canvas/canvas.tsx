@@ -10,6 +10,7 @@ import styles from "./canvas.module.css";
 
 export const Canvas = () => {
   const blocksInCanvas = useSelector(dndConstructorSelectors.blocksInCanvas);
+  const isRuntime = useSelector(dndConstructorSelectors.isRuntime);
 
   return (
     <DroppableContainer
@@ -22,7 +23,7 @@ export const Canvas = () => {
           <DraggableContainer
             draggableId={"canvas" + blockId}
             index={index}
-            isDragDisabled={false}
+            isDragDisabled={isRuntime}
           >
             {blocksMap[blockId]}
           </DraggableContainer>

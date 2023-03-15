@@ -1,7 +1,11 @@
 import { ReactNode } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import { BlockId, dndConstructorActions } from "@/entities/dnd-constructor";
+import {
+  BlockId,
+  dndConstructorActions,
+  dndConstructorSelectors,
+} from "@/entities/dnd-constructor";
 
 type Props = {
   blockId: BlockId;
@@ -10,9 +14,15 @@ type Props = {
 
 export const DeleteOnDoubleClick = ({ blockId, children }: Props) => {
   const dispatch = useDispatch();
+  const isRuntime = useSelector(dndConstructorSelectors.isRuntime);
 
-  const onDoubleClick = () =>
+  const onDoubleClick = () => {
+    if (isRuntime) {
+      return;
+    }
+
     dispatch(dndConstructorActions.deleteBlockFromCanvas(blockId));
+  };
 
   return <div onDoubleClick={onDoubleClick}>{children}</div>;
 };

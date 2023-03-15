@@ -7,6 +7,7 @@ import { BlockId } from "@/entities/dnd-constructor/model/types";
 import styles from "./calculator-constructor.module.css";
 import { Canvas } from "./canvas";
 import { Sidebar } from "./sidebar";
+import { ToggleRuntime } from "./toggle-runtime";
 
 export const CalculatorConstructor = () => {
   const dispatch = useDispatch();
@@ -38,11 +39,16 @@ export const CalculatorConstructor = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <DragDropContext onDragEnd={onDragEnd}>
-        <Sidebar />
-        <Canvas />
-      </DragDropContext>
-    </div>
+    <>
+      <div>
+        <ToggleRuntime />
+      </div>
+      <div className={styles.container}>
+        <DragDropContext onDragEnd={onDragEnd}>
+          <Sidebar />
+          <Canvas />
+        </DragDropContext>
+      </div>
+    </>
   );
 };

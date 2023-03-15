@@ -1,11 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {};
+import { clickDigit, clickOperation } from "./reducers";
+import { CalculatorState } from "./types";
+
+const initialState: CalculatorState = {
+  result: null,
+  numberOnDisplay: "0",
+  operation: null,
+  nextShouldBeNumber: false,
+};
 
 const calculatorSlice = createSlice({
   name: "calculator",
   initialState,
-  reducers: {},
+  reducers: {
+    clickDigit,
+    clickOperation,
+  },
 });
 
 export const calculatorActions = calculatorSlice.actions;

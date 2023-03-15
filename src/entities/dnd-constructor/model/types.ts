@@ -6,6 +6,7 @@ export type Block = {
 };
 
 export type DndConstructorState = {
+  isRuntime: boolean;
   blocks: Block[];
   blocksInCanvas: BlockId[];
 };
