@@ -9,10 +9,10 @@ import disableEventsStyle from "../pointer-events-disabled.module.css";
 import styles from "./operations.module.css";
 
 const operations = {
-  addition: "+",
-  subtraction: "-",
-  multiplication: "*",
   division: "/",
+  multiplication: "x",
+  subtraction: "-",
+  addition: "+",
 } as const;
 
 export const Operations = () => {

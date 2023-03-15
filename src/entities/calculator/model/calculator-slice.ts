@@ -16,6 +16,9 @@ const calculatorSlice = createSlice({
   reducers: {
     clickDigit,
     clickOperation,
+    reset() {
+      return initialState;
+    },
   },
 });
 

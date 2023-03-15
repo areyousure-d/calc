@@ -32,7 +32,7 @@ export const Canvas = () => {
           <DraggableContainer
             draggableId={"canvas" + blockId}
             index={index}
-            isDragDisabled={isRuntime}
+            isDragDisabled={isRuntime || blockId === "display"}
           >
             {blocksMap[blockId]}
           </DraggableContainer>

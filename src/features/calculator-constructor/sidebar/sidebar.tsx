@@ -9,22 +9,29 @@ import styles from "./sidebar.module.css";
 
 export const Sidebar = () => {
   const blocks = useSelector(dndConstructorSelectors.blocks);
+  const isRuntime = useSelector(dndConstructorSelectors.isRuntime);
 
   return (
-    <div className={styles.container}>
-      <DroppableContainer droppableId="sidebar" isDropDisabled={true}>
-        {blocks.map((block, index) => (
-          <DraggableContainer
-            key={block.id}
-            draggableId={block.id}
-            index={index}
-            isDragDisabled={block.moved}
-            inSidebar={true}
-          >
-            {blocksMap[block.id]}
-          </DraggableContainer>
-        ))}
-      </DroppableContainer>
-    </div>
+    <>
+      {isRuntime ? (
+        <div className={styles.container} />
+      ) : (
+        <div className={styles.container}>
+          <DroppableContainer droppableId="sidebar" isDropDisabled={true}>
+            {blocks.map((block, index) => (
+              <DraggableContainer
+                key={block.id}
+                draggableId={block.id}
+                index={index}
+                isDragDisabled={block.moved}
+                inSidebar={true}
+              >
+                {blocksMap[block.id]}
+              </DraggableContainer>
+            ))}
+          </DroppableContainer>
+        </div>
+      )}
+    </>
   );
 };

@@ -13,10 +13,10 @@ export const moveBlockToCanvas = (
     block.moved = true;
   }
 
-  if (index === 0) {
-    state.blocksInCanvas.splice(1, 0, blockId);
-  } else if (blockId === "display") {
+  if (blockId === "display") {
     state.blocksInCanvas.splice(0, 0, blockId);
+  } else if (index === 0) {
+    state.blocksInCanvas.splice(1, 0, blockId);
   } else {
     state.blocksInCanvas.splice(index, 0, blockId);
   }
@@ -56,6 +56,9 @@ export const moveBlockInCanvas = (
   }
 };
 
-export const toggleRuntime = (state: DndConstructorState) => {
-  state.isRuntime = !state.isRuntime;
+export const setRuntime = (
+  state: DndConstructorState,
+  action: PayloadAction<boolean>
+) => {
+  state.isRuntime = action.payload;
 };

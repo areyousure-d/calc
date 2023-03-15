@@ -36,7 +36,8 @@ export const DraggableContainer = ({
             className={clsx({
               [styles.container]: true,
               [styles.dragging]: snapshot.isDragging,
-              [styles["drag-disabled"]]: shouldSetOpacity,
+              [styles["disabled-opacity"]]: shouldSetOpacity,
+              [styles["dragging-disabled"]]: isDragDisabled,
             })}
           >
             {children}

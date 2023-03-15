@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { useDispatch, useSelector } from "react-redux";
 
+import { calculatorActions } from "@/entities/calculator";
 import {
   dndConstructorActions,
   dndConstructorSelectors,
@@ -14,12 +15,19 @@ export const ToggleRuntime = () => {
   const dispatch = useDispatch();
   const isRuntime = useSelector(dndConstructorSelectors.isRuntime);
 
-  const onClick = () => dispatch(dndConstructorActions.toggleRuntime());
+  const enableRuntime = () => dispatch(dndConstructorActions.setRuntime(true));
+  const disableRuntime = () => {
+    if (isRuntime) {
+      dispatch(calculatorActions.reset());
+    }
+
+    dispatch(dndConstructorActions.setRuntime(false));
+  };
 
   return (
     <div className={styles.container}>
       <button
-        onClick={onClick}
+        onClick={enableRuntime}
         className={clsx({
           [styles.button]: true,
           [styles.disabled]: isRuntime,
@@ -30,7 +38,7 @@ export const ToggleRuntime = () => {
       </button>
 
       <button
-        onClick={onClick}
+        onClick={disableRuntime}
         className={clsx({
           [styles.button]: true,
           [styles.disabled]: !isRuntime,

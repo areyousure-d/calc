@@ -2,6 +2,11 @@
   border: none;
   background: transparent;
   border-radius: var(--border-radius-md);
+  cursor: pointer;
+}
+
+.button:hover {
+  border: 2px solid var(--color-iris-100);
 }
 
 .outlined {
