@@ -1,0 +1,14 @@
+.button {
+  border: none;
+  background: transparent;
+  border-radius: var(--border-radius-md);
+}
+
+.outlined {
+  border: 1px solid #e2e3e5;
+}
+
+.filled {
+  background-color: var(--color-iris-100);
+  color: var(--color-white);
+}

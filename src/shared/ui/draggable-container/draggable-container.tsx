@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { ReactNode } from "react";
 import { Draggable } from "react-beautiful-dnd";
 
@@ -18,6 +19,8 @@ export const DraggableContainer = ({
   index,
   inSidebar = false,
 }: Props) => {
+  const shouldSetOpacity = inSidebar ? isDragDisabled : false;
+
   return (
     <Draggable
       draggableId={draggableId}
@@ -30,12 +33,22 @@ export const DraggableContainer = ({
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             ref={provided.innerRef}
+            className={clsx({
+              [styles.container]: true,
+              [styles.dragging]: snapshot.isDragging,
+              [styles["drag-disabled"]]: shouldSetOpacity,
+            })}
           >
             {children}
           </div>
 
           {snapshot.isDragging && inSidebar && (
-            <div className={styles["disable-siblings-animation"]}>
+            <div
+              className={clsx(
+                styles.container,
+                styles["disable-siblings-animation"]
+              )}
+            >
               {children}
             </div>
           )}

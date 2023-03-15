@@ -31,15 +31,15 @@ export const Digits = () => {
 
   return (
     <div
-      className={clsx(
-        isRuntime ? "" : disableEventsStyle["pointer-events-disabled"],
-        styles.container
-      )}
+      className={clsx({
+        [disableEventsStyle["pointer-events-disabled"]]: !isRuntime,
+        [styles.container]: true,
+      })}
     >
       {buttons.map((buttonSymbol) => (
         <Button
           key={buttonSymbol}
-          className={styles.button}
+          className={buttonSymbol === "0" ? styles.wide : ""}
           onClick={createOnClick(buttonSymbol)}
         >
           {buttonSymbol}

@@ -1,8 +1,10 @@
 .container {
-  display: flex;
-  flex-wrap: wrap;
+  height: 224px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
 }
 
-.button {
-  flex: 0 0 30%;
+.wide {
+  grid-column: span 2;
 }

@@ -39,16 +39,16 @@ export const CalculatorConstructor = () => {
   };
 
   return (
-    <>
-      <div>
+    <div className={styles.container}>
+      <div className={styles["toggle-runtime-container"]}>
         <ToggleRuntime />
       </div>
-      <div className={styles.container}>
+      <div className={styles["drag-drop-container"]}>
         <DragDropContext onDragEnd={onDragEnd}>
           <Sidebar />
           <Canvas />
         </DragDropContext>
       </div>
-    </>
+    </div>
   );
 };

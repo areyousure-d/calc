@@ -1,0 +1,19 @@
+:root {
+  --space-sm: 4px;
+  --space-md: 8px;
+  --space-lg: 12px;
+
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+
+  --color-black: #000;
+  --color-white: #fff;
+  --color-gray-100: #f3f4f6;
+  --color-iris-50: #f0f9ff;
+  --color-iris-100: #5d5fEf;
+
+  --dragging-opacity: 0.7;
+  --disabled-opacity: 0.4;
+
+  --box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
+}

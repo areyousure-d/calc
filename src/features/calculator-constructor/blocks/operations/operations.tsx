@@ -6,6 +6,7 @@ import { dndConstructorSelectors } from "@/entities/dnd-constructor";
 import { Button } from "@/shared/ui/button";
 
 import disableEventsStyle from "../pointer-events-disabled.module.css";
+import styles from "./operations.module.css";
 
 const operations = {
   addition: "+",
@@ -23,13 +24,18 @@ export const Operations = () => {
 
   return (
     <div
-      className={clsx(
-        isRuntime ? "" : disableEventsStyle["pointer-events-disabled"]
-      )}
+      className={clsx({
+        [styles.container]: true,
+        [disableEventsStyle["pointer-events-disabled"]]: !isRuntime,
+      })}
     >
       {Object.entries(operations).map(([key, value]) => {
         return (
-          <Button key={key} onClick={createOnClick(key as Operation)}>
+          <Button
+            key={key}
+            onClick={createOnClick(key as Operation)}
+            className={styles.button}
+          >
             {value}
           </Button>
         );

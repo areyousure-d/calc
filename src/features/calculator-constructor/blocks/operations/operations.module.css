@@ -1,4 +1,14 @@
 .container {
+  height: 52px;
   display: flex;
-  flex-direction: space-between;
+  justify-content: space-between;
+}
+
+.button {
+  flex: 1 0 auto;
+  margin-right: var(--space-sm);
+}
+
+.button:last-child {
+  margin-right: 0;
 }

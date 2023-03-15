@@ -1,3 +1,18 @@
 .disable-siblings-animation ~ div {
   transform: none !important;
 }
+
+.container {
+  margin-bottom: var(--space-lg);
+  padding: var(--space-sm);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow);
+}
+
+.dragging {
+  opacity: var(--dragging-opacity);
+}
+
+.drag-disabled {
+  opacity: var(--disabled-opacity);
+}
