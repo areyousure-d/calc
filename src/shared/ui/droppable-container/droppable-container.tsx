@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { ReactNode } from "react";
 import { Droppable } from "react-beautiful-dnd";
 
@@ -6,6 +7,7 @@ type Props = {
   children: ReactNode;
   isDropDisabled: boolean;
   className?: string;
+  draggingOverClassName?: string;
 };
 
 export const DroppableContainer = ({
@@ -13,16 +15,19 @@ export const DroppableContainer = ({
   children,
   isDropDisabled,
   className,
+  draggingOverClassName,
 }: Props) => {
   return (
     <Droppable droppableId={droppableId} isDropDisabled={isDropDisabled}>
-      {(provided) => {
+      {(provided, snapshot) => {
         return (
           <>
             <div
               {...provided.droppableProps}
               ref={provided.innerRef}
-              className={className}
+              className={clsx(className, {
+                [draggingOverClassName ?? ""]: snapshot.isDraggingOver,
+              })}
             >
               {children}
             </div>
